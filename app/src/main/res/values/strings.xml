@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">FUELPASS</string>
+    <string name="image_description">image</string>
+    <string name="login">LogIn</string>
+    <string name="register">Register</string>
+
+    <string name="owner_home_btn1">Fuel Availability</string>
+    <string name="owner_home_btn2">Restock Station</string>
+    <string name="owner_home_btn3">Update Price</string>
+    <string name="owner_home_btn4">Update Quota</string>
+    <string name="owner_home_btn5">Update Availability</string>
+
+    <string name="owner_station_restock_header">Restock Station</string>
+    <string name="owner_station_restock_input1">Fuel Type</string>
+    <string name="owner_station_restock_input2">Restock Volume (Liter)</string>
+    <string name="owner_station_restock_input3">Arrival Date</string>
+    <string name="owner_station_restock_input4">Arrival Time</string>
+    <string name="owner_station_restock_btn1">Date</string>
+    <string name="owner_station_restock_btn2">Time</string>
+    <string name="owner_station_restock_btn3">Save</string>
+
+    <string name="owner_price_update_header">Fuel Price Updater</string>
+    <string name="owner_price_update_input1">Fuel Type</string>
+    <string name="owner_price_update_input2">Old Price (LKR)</string>
+    <string name="owner_price_update_input3">New Price (LKR)</string>
+    <string name="owner_price_update_btn">Update</string>
+
+    <string name="owner_quota_update_header">Weekly Quota Updater</string>
+    <string name="owner_quota_update_input1">Vehicle Type</string>
+    <string name="owner_quota_update_input2">New Quota</string>
+    <string name="owner_quota_update_btn">Update</string>
+
+    <string name="owner_update_station_availability_header">Fuel Availability Updater</string>
+    <string name="owner_update_station_availability_input1">Fuel Type</string>
+    <string name="owner_update_station_availability_input2">Availability Status</string>
+    <string name="owner_update_station_availability_btn">Update</string>
+
+    <string name="owner_view_station_availability_header">Fuel Availability</string>
+    <string name="owner_view_station_availability_input1">Fuel Type</string>
+    <string name="owner_view_station_availability_input2">Available Amount (Liters)</string>
+
+    <string name="customer_home_btn1">Refill</string>
+    <string name="customer_home_btn2">Add New Vehicle</string>
+    <string name="customer_home_btn3">View Quota</string>
+    <string name="customer_home_btn4">Fuel Availability</string>
+
+    <string name="customer_new_vehicle_header">Register Vehicle</string>
+    <string name="customer_new_vehicle_input1">Vehicle Number</string>
+    <string name="customer_new_vehicle_input2">Chassis Number</string>
+    <string name="customer_new_vehicle_input3">Vehicle Type</string>
+    <string name="customer_new_vehicle_btn">Save</string>
+
+    <string name="customer_quota_list_header">Fuel Quota Allocation</string>
+
+    <string name="customer_refill_header">Fuel Refill</string>
+    <string name="customer_refill_input1">Select Station</string>
+    <string name="customer_refill_btn1">Join Queue</string>
+    <string name="customer_refill_btn2">Leave After Refill</string>
+    <string name="customer_refill_btn3">Leave Before Refill</string>
+
+    <string name="customer_view_fuel_availability_header">Fuel Availability</string>
+    <string name="customer_view_fuel_availability_input1">Select Station</string>
+
+    <string name="vehicle_type_spinner">Select Vehicle Type</string>
+    <string-array name="vehicle_types_array">
+        <item>Select Vehicle Type</item>
+        <item>Car</item>
+        <item>Bike</item>
+        <item>Van</item>
+        <item>Three-Wheel</item>
+        <item>Heavy Vehicle</item>
+    </string-array>
+
+    <string name="fuel_type_spinner">Select Fuel Type</string>
+    <string-array name="fuel_types_array">
+        <item>Select Fuel Type</item>
+        <item>Petrol (92 Octane)</item>
+        <item>Petrol (95 Octane)</item>
+        <item>Auto Diesel</item>
+        <item>Super Diesel</item>
+    </string-array>
+
+    <string name="fuel_availability_status_spinner">Availability Status</string>
+    <string-array name="fuel_availability_status_array">
+        <item>Select Availability</item>
+        <item>Available</item>
+        <item>Unavailable</item>
+    </string-array>
+
+    <string-array name="station_array">
+        <item>Select Station</item>
+        <item>Station A</item>
+        <item>Station B</item>
+        <item>Station C</item>
+        <item>Station D</item>
+        <item>Station E</item>
+    </string-array>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="UserRegistrationViewEditText2">NIC</string>
+</resources>
