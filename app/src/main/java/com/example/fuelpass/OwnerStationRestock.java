@@ -49,7 +49,7 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
         initDatePicker();
         dateBtn.setText(getTodayDate());
     }
-
+    // triggers when spinner item selected by the user
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String selectedValue = adapterView.getItemAtPosition(i).toString();
@@ -65,6 +65,7 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
 
     }
 
+    // return current date
     private String getTodayDate() {
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);
@@ -74,10 +75,12 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
         return makeDateString(day, month, year);
     }
 
+    // concatenate day, month and year
     private String makeDateString(int day, int month, int year) {
         return getMonthFormat(month) + " " + day + " " + year;
     }
 
+    // return month name in string format
     private String getMonthFormat(int month) {
         if(month == 1)
             return "JAN";
@@ -108,6 +111,7 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
         return "JAN";
     }
 
+    // calculate current date, month and year before opening date picker dialog
     private void initDatePicker() {
         DatePickerDialog.OnDateSetListener dateSetListener = (datePicker, year, month, day) -> {
             month = month + 1;
@@ -126,11 +130,13 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
         //datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
     }
 
+    // open date picker dialog
     public void openDatePicker(View view)
     {
         datePickerDialog.show();
     }
 
+    // open time picker dialog
     public void popTimePicker(View view)
     {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = (timePicker, selectedHour, selectedMinute) -> {

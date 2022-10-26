@@ -34,7 +34,7 @@ public class OwnerQuotaUpdate extends AppCompatActivity implements AdapterView.O
         vehicleTypesSpinner.setAdapter(adapter);
         vehicleTypesSpinner.setOnItemSelectedListener(this);
     }
-
+    // triggers when spinner item selected by the user
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String selectedValue = adapterView.getItemAtPosition(i).toString();

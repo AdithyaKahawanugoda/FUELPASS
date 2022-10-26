@@ -33,7 +33,7 @@ public class CustomerNewVehicle extends AppCompatActivity implements AdapterView
         vehicleTypesSpinner.setOnItemSelectedListener(this);
 
     }
-
+    // triggers when spinner item selected by the user
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String selectedValue = adapterView.getItemAtPosition(i).toString();

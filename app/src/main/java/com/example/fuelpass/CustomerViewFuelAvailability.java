@@ -50,7 +50,7 @@ public class CustomerViewFuelAvailability extends AppCompatActivity implements A
         fuelAvailability.setAdapter(fuelAdapter);
 
     }
-
+    // triggers when spinner item selected by the user
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String selectedValue = adapterView.getItemAtPosition(i).toString();

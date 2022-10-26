@@ -32,7 +32,7 @@ public class OwnerViewStationAvailability extends AppCompatActivity implements A
         fuelTypeSpinner.setAdapter(adapter);
         fuelTypeSpinner.setOnItemSelectedListener(this);
     }
-
+    // triggers when spinner item selected by the user
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String selectedValue = adapterView.getItemAtPosition(i).toString();
