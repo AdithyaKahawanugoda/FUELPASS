@@ -31,6 +31,7 @@ public class CustomerRefill extends AppCompatActivity implements AdapterView.OnI
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_refill);
 
+        //set buttons
         joinBtn = findViewById(R.id.customer_refill_btn1);
         leaveBeforeBtn = findViewById(R.id.customer_refill_btn2);
         leaveAfterBtn = findViewById(R.id.customer_refill_btn3);
@@ -65,6 +66,7 @@ public class CustomerRefill extends AppCompatActivity implements AdapterView.OnI
         leaveAfterBtn.setVisibility(View.INVISIBLE);
         leaveBeforeBtn.setVisibility(View.INVISIBLE);
 
+        //set listeners for button onclick actions
         joinBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

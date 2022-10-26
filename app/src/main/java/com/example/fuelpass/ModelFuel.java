@@ -7,6 +7,7 @@ public class ModelFuel {
     String fuelType;
     String fuelStatus;
 
+    //Constructor
     public ModelFuel(String fuelType, String fuelStatus){
         this.fuelType = fuelType;
         this.fuelStatus = fuelStatus;
