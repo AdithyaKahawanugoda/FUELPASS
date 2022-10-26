@@ -20,6 +20,7 @@ public class CustomerQuotaList extends AppCompatActivity {
 
         RecyclerView viewQuota = findViewById(R.id.view_quota_recycler);
 
+        //Arraylist
         ArrayList<ModelVehicleList> vehicleList = new ArrayList<>();
         vehicleList.add(new ModelVehicleList("NA-5634","Car", "AZ-12-2345-123", 20, 12));
         vehicleList.add(new ModelVehicleList("NA-5635","Car", "AZ-12-2345-123", 20, 12));
