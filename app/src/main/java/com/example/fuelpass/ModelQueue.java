@@ -1,5 +1,8 @@
 package com.example.fuelpass;
 
+/**
+ * class ModelQueue models queue data in the app
+ */
 public class ModelQueue {
     String customerId;
     String stationId;

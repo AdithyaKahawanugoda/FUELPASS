@@ -18,6 +18,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Class CustomerRefill implements the functionality of when the customer wants to search a station,
+ * join a fuel queue, leave before pumping fuel or leave after pumping fuel.
+ */
 public class CustomerRefill extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     Button joinBtn, leaveBeforeBtn, leaveAfterBtn;

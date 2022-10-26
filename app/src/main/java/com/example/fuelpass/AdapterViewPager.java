@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+/**
+ * class AdapterViewPager implements the adapter used to navigate the tabs of the tab layout
+ */
 public class AdapterViewPager extends FragmentStateAdapter {
     public AdapterViewPager(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
@@ -25,6 +28,7 @@ public class AdapterViewPager extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
+        //outputs the amounts of tabs to be displayed
         return 2;
     }
 

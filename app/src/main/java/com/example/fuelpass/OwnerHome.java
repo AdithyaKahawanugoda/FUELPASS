@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+/**
+ * Class OwnerHome implements the functionality of the menu screen that the Station Owner sees after
+ * logging into the app.
+ */
 public class OwnerHome extends AppCompatActivity {
 
     @Override

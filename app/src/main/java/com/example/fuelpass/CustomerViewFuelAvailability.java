@@ -16,6 +16,10 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+/**
+ * Class CustomerViewFuelAvailability implements the functionality of when the customer
+ * views the fuel availability.
+ */
 public class CustomerViewFuelAvailability extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override

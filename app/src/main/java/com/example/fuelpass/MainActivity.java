@@ -12,6 +12,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Class MainActivity implements the splash screen of the app
+ */
 public class MainActivity extends AppCompatActivity {
 
     private static final int STARTUP_SCREEN = 4;

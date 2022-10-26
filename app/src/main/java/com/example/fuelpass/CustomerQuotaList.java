@@ -8,6 +8,9 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
+/**
+ * class CustomerQuotaList models customer quota data in the app
+ */
 public class CustomerQuotaList extends AppCompatActivity {
 
     @Override

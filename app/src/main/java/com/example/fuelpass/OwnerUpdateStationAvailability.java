@@ -11,6 +11,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Class OwnerUpdateStationAvailability implements the functionality of when the station
+ * owner updates the fuel availability status.
+ */
 public class OwnerUpdateStationAvailability extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override

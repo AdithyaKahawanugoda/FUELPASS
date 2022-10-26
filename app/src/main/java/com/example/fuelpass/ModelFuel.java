@@ -1,5 +1,8 @@
 package com.example.fuelpass;
 
+/**
+ * class ModelFuel models fuel data in the app
+ */
 public class ModelFuel {
     String fuelType;
     String fuelStatus;

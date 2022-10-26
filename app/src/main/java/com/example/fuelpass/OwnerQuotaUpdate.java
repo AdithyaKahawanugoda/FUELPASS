@@ -12,6 +12,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Class OwnerQuotaUpdate implements the functionality of when the station
+ * owner updates the weekly fuel quotas per vehicle type.
+ */
 public class OwnerQuotaUpdate extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override

@@ -11,10 +11,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+/**
+ * Class AdapterRefillFuel implements the setting up of data to the recyclerview of joining the queue
+ */
 public class AdapterRefillFuel extends RecyclerView.Adapter<AdapterRefillFuel.ViewHolder> {
     final Context context;
     private final ArrayList<ModelQueue> queueArrayList;
 
+    //Constructor
     public AdapterRefillFuel(Context context, ArrayList<ModelQueue> queueArrayList){
         this.context = context;
         this.queueArrayList = queueArrayList;
@@ -30,7 +34,7 @@ public class AdapterRefillFuel extends RecyclerView.Adapter<AdapterRefillFuel.Vi
 
     @Override
     public void onBindViewHolder(@NonNull AdapterRefillFuel.ViewHolder holder, int position) {
-        //assigning values to text views in the card layout
+        //value assignment to text views in the card layout
         ModelQueue queues = queueArrayList.get(position);
         holder.queueLength.setText(queueArrayList.size()+"");
         holder.fuelType.setText(queues.getFuelType());
@@ -40,7 +44,7 @@ public class AdapterRefillFuel extends RecyclerView.Adapter<AdapterRefillFuel.Vi
 
     @Override
     public int getItemCount() {
-        //display the number of cards in the recycler view
+        //outputs the amounts of cards to be displayed in the recycler view
         return queueArrayList.size();
     }
 
@@ -51,7 +55,7 @@ public class AdapterRefillFuel extends RecyclerView.Adapter<AdapterRefillFuel.Vi
         private final TextView fuelType;
 
         public ViewHolder(@NonNull View itemView) {
-            //initialize views
+            //initialize the text views
             super(itemView);
             fuelType = itemView.findViewById(R.id.pumpFuelCard_TextViewR1);
             queueLength = itemView.findViewById(R.id.pumpFuelCard_TextViewR2);

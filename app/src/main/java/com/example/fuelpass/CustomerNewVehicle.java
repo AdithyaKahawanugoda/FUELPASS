@@ -11,6 +11,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Class CustomerNewVehicle implements the functionality when a customer registers a vehicle
+ * in the system.
+ */
 public class CustomerNewVehicle extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override

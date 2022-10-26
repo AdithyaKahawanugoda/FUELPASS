@@ -11,6 +11,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Class OwnerPriceUpdate implements the functionality of when the station
+ * owner updates the fuel prices.
+ */
 public class OwnerPriceUpdate extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     @Override

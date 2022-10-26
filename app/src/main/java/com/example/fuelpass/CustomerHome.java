@@ -7,6 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+/**
+ * Class CustomerHome implements the functionality of the menu screen that the Customer sees after
+ * logging into the app.
+ */
 public class CustomerHome extends AppCompatActivity {
 
     @Override

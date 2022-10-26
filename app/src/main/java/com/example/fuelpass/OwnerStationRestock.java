@@ -18,6 +18,10 @@ import android.widget.Toast;
 import java.util.Calendar;
 import java.util.Locale;
 
+/**
+ * Class OwnerStationRestock implements the functionality of when the station
+ * owner adds in a request for the restock of fuel in the station.
+ */
 public class OwnerStationRestock extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private DatePickerDialog datePickerDialog;

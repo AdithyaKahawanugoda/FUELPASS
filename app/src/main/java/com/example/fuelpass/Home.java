@@ -12,6 +12,9 @@ import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
 
+/**
+ * Class Home implements the login and registration tabs for when the user open the app.
+ */
 public class Home extends AppCompatActivity {
 
     TabLayout tabLayout;

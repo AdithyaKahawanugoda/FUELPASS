@@ -1,5 +1,8 @@
 package com.example.fuelpass;
 
+/**
+ * class ModelVehicleList models vehicle data in the app
+ */
 public class ModelVehicleList {
     private String vehicleNo;
     private String vehicleType;

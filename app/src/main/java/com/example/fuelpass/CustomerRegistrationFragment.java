@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link CustomerRegistrationFragment} factory method to
- * create an instance of this fragment.
+ * class CustomerRegistrationFragment deals with customer registration into the app
  */
 public class CustomerRegistrationFragment extends Fragment {
 

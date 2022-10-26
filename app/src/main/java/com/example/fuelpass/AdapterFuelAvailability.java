@@ -11,10 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class AdapterFuelAvailability extends RecyclerView.Adapter<AdapterFuelAvailability.ViewHolder>{
+/**
+ * class AdapterFuelAvailability implements the setting up of data to the recyclerview of viewing
+ * fuel availability
+ */
+public class AdapterFuelAvailability  extends RecyclerView.Adapter<AdapterFuelAvailability.ViewHolder>{
     final Context context;
     private final ArrayList<ModelFuel> fuelList;
 
+    //Constructor
     public AdapterFuelAvailability(Context context, ArrayList<ModelFuel> fuelList){
         this.context = context;
         this.fuelList = fuelList;
@@ -30,7 +35,7 @@ public class AdapterFuelAvailability extends RecyclerView.Adapter<AdapterFuelAva
 
     @Override
     public void onBindViewHolder(@NonNull AdapterFuelAvailability.ViewHolder holder, int position) {
-        //assigning values to text views in the card layout
+        //value assignment to text views in the card layout
         ModelFuel fuel = fuelList.get(position);
         holder.fuelType.setText(fuel.getFuelType());
         holder.fuelStatus.setText(fuel.getFuelStatus());
@@ -38,7 +43,7 @@ public class AdapterFuelAvailability extends RecyclerView.Adapter<AdapterFuelAva
 
     @Override
     public int getItemCount() {
-        //display the number of cards in the recycler view
+        //outputs the amounts of cards to be displayed in the recycler view
         return fuelList.size();
     }
 
@@ -46,7 +51,7 @@ public class AdapterFuelAvailability extends RecyclerView.Adapter<AdapterFuelAva
         private final TextView fuelType;
         private final TextView fuelStatus;
 
-        //initialize views
+        //initialize the text views
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             fuelType = itemView.findViewById(R.id.fuelAvailabilityCard_TextViewR1);

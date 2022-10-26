@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link CustomerLoginFragment} factory method to
- * create an instance of this fragment.
+ * Class CustomerLoginFragment deals with the login functionality of users.
  */
 public class CustomerLoginFragment extends Fragment {
 
