@@ -3,6 +3,7 @@ package com.example.fuelpass;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -94,6 +95,7 @@ public class OwnerQuotaUpdate extends AppCompatActivity implements AdapterView.O
             public void onResponse(Call<ModelQuota> call, Response<ModelQuota> response) {
                 Toast.makeText(getBaseContext(),"SUCCESSFUL",Toast.LENGTH_SHORT).show();
                 Log.d("7526-RES OK",response+"");
+                startActivity(new Intent(getApplicationContext(),OwnerHome.class));
             }
 
             @Override
