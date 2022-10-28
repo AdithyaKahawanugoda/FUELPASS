@@ -5,18 +5,28 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Class OwnerStationRestock implements the functionality of when the station
@@ -25,17 +35,51 @@ import java.util.Locale;
 public class OwnerStationRestock extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     private DatePickerDialog datePickerDialog;
-    private Button dateBtn, timeBtn;
+    private Button dateBtn, timeBtn, updateBtn;
+    private EditText editText;
     private int hour, minute;
+
+    private ArrayList<ModelAvailableFuel> availableFuelObj;
+    private ModelStation resStation;
+
+    private String selectedFuelType, restockAmount;
+
+    Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("http://192.168.8.169:8082/api/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+    APIStationManager apiStationManager = retrofit.create(APIStationManager.class);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owner_station_restock);
 
+        resStation = new ModelStation();
+        Call<ModelStation> call = apiStationManager.getStationData("635a27fcc8a3556fe1452979");
+        call.enqueue(new Callback<ModelStation>() {
+            @Override
+            public void onResponse(Call<ModelStation> call, Response<ModelStation> response) {
+                if(response.body() != null){
+                    resStation.setStationName(response.body().getStationName());
+                    resStation.setId(response.body().getId());
+                    resStation.setStationAddress(response.body().getStationAddress());
+                    availableFuelObj = response.body().getAvailableFuel();
+                    Toast.makeText(getBaseContext(),"Data Loaded",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ModelStation> call, Throwable t) {
+                Toast.makeText(getBaseContext(),"FAILED",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         Spinner fuelTypesSpinner = findViewById(R.id.owner_station_restock_input1);
         dateBtn = findViewById(R.id.owner_station_restock_btn1);
         timeBtn = findViewById(R.id.owner_station_restock_btn2);
+        updateBtn = findViewById(R.id.owner_station_restock_btn3);
+        editText = findViewById(R.id.owner_station_restock_input2);
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -48,6 +92,15 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
 
         initDatePicker();
         dateBtn.setText(getTodayDate());
+
+        updateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectedFuelType = fuelTypesSpinner.getSelectedItem().toString();
+                restockAmount = editText.getText().toString();
+                restockStation(selectedFuelType,restockAmount);
+            }
+        });
     }
     // triggers when spinner item selected by the user
     @Override
@@ -151,5 +204,34 @@ public class OwnerStationRestock extends AppCompatActivity implements AdapterVie
 
         timePickerDialog.setTitle("Select Time");
         timePickerDialog.show();
+    }
+
+    public void restockStation(String selectedFuelType, String restockAmount) {
+        availableFuelObj.forEach((fuel)->{
+            if(fuel.getFuelType().equals(selectedFuelType)) {
+                float availableFuelAmount = Float.parseFloat(fuel.getAvailable());
+                fuel.setAvailable(Float.toString(availableFuelAmount+Float.parseFloat(restockAmount)));
+            }
+        });
+        resStation.setAvailableFuel(availableFuelObj);
+
+        ArrayList<ModelAvailableFuel> availableFuel = resStation.getAvailableFuel();
+        availableFuel.forEach((n)->{
+            Log.i("7526-CHK",n.getUnitPrice()+" "+n.getFuelType());});
+
+        Call<ModelStation> call = apiStationManager.updateStation("635a27fcc8a3556fe1452979",resStation);
+        call.enqueue(new Callback<ModelStation>() {
+            @Override
+            public void onResponse(Call<ModelStation> call, Response<ModelStation> response) {
+                Toast.makeText(getBaseContext(),"SUCCESSFUL",Toast.LENGTH_SHORT).show();
+                Log.d("7526-RES OK",response+"");
+                startActivity(new Intent(getApplicationContext(),OwnerHome.class));
+            }
+
+            @Override
+            public void onFailure(Call<ModelStation> call, Throwable t) {
+                Toast.makeText(getBaseContext(),"FAILED",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
