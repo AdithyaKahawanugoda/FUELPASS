@@ -62,7 +62,7 @@
         </RelativeLayout>
 
 
-        <EditText
+        <TextView
             android:id="@+id/owner_price_update_input2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,9 +72,10 @@
             android:fontFamily="@font/quicksand_semi_bold"
             android:hint="@string/owner_price_update_input2"
             android:importantForAutofill="no"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingStart="15dp"
+            android:gravity="center"
+            android:textSize="20sp"
             android:paddingEnd="15dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"

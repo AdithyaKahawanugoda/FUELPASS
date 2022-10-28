@@ -62,7 +62,7 @@
 
         </RelativeLayout>
 
-        <EditText
+        <TextView
             android:id="@+id/owner_view_station_availability_input2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -70,14 +70,15 @@
             android:background="@drawable/input_field_style"
             android:ems="10"
             android:fontFamily="@font/quicksand_semi_bold"
-            android:hint="@string/owner_view_station_availability_input2"
+            android:text="@string/owner_view_station_availability_input2"
             android:importantForAutofill="no"
-            android:inputType="numberDecimal"
             android:minHeight="48dp"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
+            android:gravity="center"
+            android:textSize="20sp"
             android:textStyle="bold"
             />
 

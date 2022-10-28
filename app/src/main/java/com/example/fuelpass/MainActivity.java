@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Execute a task in the background thread after 3 seconds.
         backgroundExecutor.schedule(() -> {
-            Intent intent = new Intent(MainActivity.this, Home.class);
+            Intent intent = new Intent(MainActivity.this, OwnerPriceUpdate.class);
             startActivity(intent);
             finish();
         }, STARTUP_SCREEN, TimeUnit.SECONDS);
